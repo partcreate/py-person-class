@@ -54,14 +54,14 @@ def create_person_list(people: List[PersonData]) -> List[Person]:
 
     for i, value in enumerate(res_list):
 
-        has_wife_key = "wife" in people[i]
+        has_wife_key = people[i].get("wife")
 
-        has_husband_key = "husband" in people[i]
+        has_husband_key = people[i].get("husband")
 
-        if has_wife_key and people[i]["wife"] is not None:
-            Person.people[people[i]["wife"]].set_husband(value)
+        if has_wife_key and has_wife_key is not None:
+            Person.people[has_wife_key].set_husband(value)
 
-        if has_husband_key and people[i]["husband"] is not None:
-            Person.people[people[i]["husband"]].set_wife(value)
+        if has_husband_key and has_husband_key is not None:
+            Person.people[has_husband_key].set_wife(value)
 
     return res_list
