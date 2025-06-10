@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Union, TypedDict, List, NotRequired
+from typing import Union, TypedDict, List
 from typing import Optional
 
 
@@ -25,12 +25,12 @@ class BasePersonData(TypedDict):
 
 class PersonDataWithWife(BasePersonData):
 
-    wife: NotRequired[Optional[str]]
+    wife: Optional[str]
 
 
 class PersonDataWithHusband(BasePersonData):
 
-    husband: NotRequired[Optional[str]]
+    husband: Optional[str]
 
 
 PersonData = Union[
